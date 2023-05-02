@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php ?>
+<head>
+  <title>Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./assets/img/favicon.jpeg">
+  <link rel="stylesheet" href="./assets/css/bootstrap.css">
+  <script src="./assets/js/jquery-slim.js"></script>
+  <script src="./assets/js/popper.js"></script>
+  <script src="./assets/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+  <section class="vh-100">
+    <div class="container-fluid h-custom">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="./assets/img/puzzle.jpeg" class="img-fluid"
+            alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+          <form>
+
+            <div class="divider d-flex align-items-center my-4">
+              <h3 class="text-center fw-bold mx-3 mb-0">Login</h3>
+            </div>
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="text" class="name form-control form-control-lg" id="name" placeholder="Enter name"
+                name="name" />
+                <span class="name_error hide">Please enter correct name</span>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input type="password" id="password" name="password" class="password form-control form-control-lg"
+                placeholder="Enter password" />
+                <span class="password_error hide">Please enter correct password</span>
+            </div>
+
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="button" class="submit btn btn-primary btn-lg"
+                style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+              <p class="small fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="./signup.html"
+                  class="link-danger">Register</a></p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $(document).ready(function () {
+      // Handle validation
+      $('.submit').click(function () {
+        $name = $('.name').val();
+        $password = $('.password').val();
+        // Name Error
+        if($name != localStorage.getItem('name')){
+          $('.name_error').show();
+        }
+        else{
+          $('.name_error').hide();
+        }
+        // Password Error
+        if ($name == localStorage.getItem('name') && $password == localStorage.getItem('password')) {
+          $('.password_error').hide();
+          window.location.href = 'game.html';
+        }
+        else{
+          $('.password_error').show();
+        }        
+
+        return false;
+      });
+    });
+  </script>
+</body>
+
+</html>

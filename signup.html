@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>SignUp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="./assets/img/favicon.jpeg">
+  <link rel="stylesheet" href="./assets/css/bootstrap.css">
+  <script src="./assets/js/jquery-slim.js"></script>
+  <script src="./assets/js/popper.js"></script>
+  <script src="./assets/js/bootstrap.js"></script>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <section class="min-vh-100">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img src="./assets/img/sign.jpeg"
+              class="img-fluid" alt="Sample image">
+          </div>
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form>
+
+              <div class="divider d-flex align-items-center my-4">
+                <h3 class="text-center fw-bold mx-3 mb-0">Sign Up</h3>
+              </div>
+
+              <div class="row ">
+                <div class="col-12 p-0 m-0">
+                  <!-- Name -->
+                  <div class="form-outline mb-4">
+                    <input type="text" class="name form-control form-control-lg" id="name" placeholder="Enter name"
+                      name="name" />
+                    <span class="name_error hide">Name is Required</span>
+                  </div>
+                </div>
+                <div class="col-12 p-0 m-0">
+                  <!-- DOB -->
+                  <div class="form-outline mb-4">
+                    <input placeholder="Choose DOB" type="text" onfocus="(this.type = 'date')" class="dob form-control form-control-lg" id="dob" placeholder="DOB" name="dob" />
+                    <span class="dob_error hide">DOB is Required</span>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 p-0 m-0 pr-1">
+                  <!-- Password input -->
+                  <div class="form-outline mb-3">
+                    <input type="password" id="password" name="password" class="password form-control form-control-lg"
+                      placeholder="Enter password" />
+                    <span class="password_error hide">Password is Required</span>
+                  </div>
+                </div>
+
+                <div class="col-12 col-md-6 p-0 m-0 pl-1">
+                  <!-- Mobile -->
+                  <div class="form-outline mb-4">
+                    <input type="nutextmber" class="mobile form-control form-control-lg" id="mobile" placeholder="Enter mobile"
+                      name="mobile" />
+                    <span class="mobile_error hide">Mobile no is Required</span>
+                  </div>
+                </div>
+
+                <div class="col-12 p-0 m-0">
+                  <!-- Address -->
+                  <div class="form-outline mb-4">
+                    <textarea class="address form-control form-control-lg" id="address" placeholder="Enter Address" class="address" name="address"
+                      rows="3"></textarea>
+                    <span class="address_error hide">Address is Required</span>
+                  </div>
+                </div>
+
+                <div class="col-12 p-0 m-0">
+                  <!-- Upload -->
+                  <div class="form-outline mb-4">
+                    <input type="file" class="upload form-control form-control-lg" id="upload" name="upload" onchange="readURL(this);"/>
+                    <span class="upload_error hide">File is Required</span>
+                  </div>
+                </div>
+              </div>
+             
+              <div class="text-center text-lg-start mt-4 py-2">
+                <button type="button" class="submit btn btn-primary btn-lg"
+                  style="padding-left: 2.5rem; padding-right: 2.5rem;">Sign In</button>
+                <p class="small fw-bold mt-2 pt-1 mb-0">Back To Login <a href="./"
+                    class="link-danger">Login</a></p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <script>
+    // Store Upload File
+    function readURL(input) {
+      //Check if input has files.
+        if (input.files && input.files[0]) {
+          //Initialize FileReader.
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                $upload = e.target.result;
+                localStorage.setItem('upload', $upload);
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    // Handle validation
+    $(document).ready(function () {
+      $('.submit').click(function () {
+         
+        $name = $('.name').val();
+        $password = $('.password').val();
+        $mobile = $('.mobile').val();
+        $dob = $('.dob').val();
+        $address = $('.address').val();
+        $pic = $('.upload').val();   
+        
+        localStorage.setItem('name', $name);
+        localStorage.setItem('password', $password);
+        localStorage.setItem('mobile', $mobile);
+        localStorage.setItem('dob', $dob);
+        localStorage.setItem('address', $address);
+
+        // Name Error
+        if (localStorage.getItem('name')){
+          $('.name_error').hide();
+        }
+        else{
+          $('.name_error').show();
+        }
+
+        if(localStorage.getItem('password')){
+          $('.password_error').hide();
+        }
+        else{
+          $('.password_error').show();
+        }
+
+        // Mobile Error
+        if(localStorage.getItem('mobile')){
+          $('.mobile_error').hide();
+        }
+        else{
+          $('.mobile_error').show();
+        }
+
+        // DOB Error
+        if(localStorage.getItem('dob')){
+          $('.dob_error').hide();
+        }
+        else{
+          $('.dob_error').show();
+        }
+
+        // Address Error
+        if(localStorage.getItem('address')){
+          $('.address_error').hide();
+        }
+        else{
+          $('.address_error').show();
+        }
+
+        // Upload Error
+        if($pic){
+          $('.upload_error').hide();
+        }
+        else{
+          $('.upload_error').show();
+        }
+
+        if (localStorage.getItem('name') && localStorage.getItem('password') && localStorage.getItem('mobile') &&  localStorage.getItem('dob') && localStorage.getItem('address') && localStorage.getItem('upload')) {
+          window.location.href = './';
+        }
+        return false; 
+      });
+    });
+  </script>
+</body>
+
+</html>

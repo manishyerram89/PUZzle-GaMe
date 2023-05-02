@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15 Puzzle Game</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon.jpeg">
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel='stylesheet' href='./assets/css/sweetalert.css'>
+    <script src="./assets/js/jquery-slim.js"></script>
+    
+    <script src="./assets/js/sweetalert.js"></script>
+    <script src="./assets/js/sweetalert-all.js"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <section class="">
+            <div class="row min-vh-100 align-items-center">
+                <div class="col-12 col-lg-3 min-vh-50 max-vh-75" id="details" >
+                </div>
+                <div class="col-12 col-lg-9 min-vh-50 max-vh-75">
+                    <div class="row" id="header">
+                        <div class="col-12" id="guide">
+                            <h3 class="heading">Puzzle Game</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <div id="content">
+                                <!--#this is where you place the contents of your web page-->
+                                <table id="table">
+                                </table>
+                                <br>
+                                <br>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label> <input type="text" name="rows" id="rows" value="4" size="2"> X</label>
+                                        <label> <input type="text" name="columns" id="columns" value="4" size="2"></label>
+                                        <input type="button" id="newGame" value="Start New Game">
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- <br> -->
+                                <span class="no_move">Number Of Moves:</span> <span id="moves">0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+        <script type="text/javascript" src="./assets/js/script.js"></script>
+</body>
+
+</html>

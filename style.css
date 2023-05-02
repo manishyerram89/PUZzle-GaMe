@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&family=Roboto:wght@400;500&display=swap');
+/* Declare Color */
+:root{
+  --black: #000;
+  --grey:#677895;
+  --white: #fff;
+  --box-bg: #6CAEC3;
+  --gradient: rgba(73, 73, 73, 0.25);
+  --heading: #2F80ED;
+  --shadow:var(--heading);
+  --background: var(--heading);
+  --dark:rgba(55, 60, 174, 0.61);
+  --light:rgba(20, 150, 158, 0.53) ;
+  --last-box:var(--dark);
+  --last-box-light:var(--light);
+}
+.disclaimer{
+    display:none !important;
+    visibility:hidden;
+}
+/* Fifteen Game Board*/
+#table {
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+  }
+  
+.tile {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--grey);
+  text-align: center;
+  /* Webkit (Chrome and Safari) */
+  background: -webkit-gradient(
+    linear,
+    top,
+    bottom,
+    color-stop(15%, var(--light)),
+    color-stop(80%, var(--dark))
+  );
+  /* Mozilla */
+  background: -moz-linear-gradient(
+    top,
+    var(--light) 15%,
+    var(--dark) 90%
+  );
+  background: linear-gradient(
+    90deg,
+    var(--light) 15%,
+    var(--dark) 90%
+  );
+  /* Internet Explorer */
+  color: var(--black);
+  cursor: pointer;
+}
+
+.blank {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+}
+
+#moves {
+  border: 2px solid var(--black);
+  /* Webkit (Chrome and Safari) */
+  background: -webkit-gradient(
+    linear,
+    top,
+    bottom,
+    color-stop(15%, var(--last-box-light)),
+    color-stop(80%, var(--last-box))
+  );
+  /* Mozilla */
+  background: -moz-linear-gradient(
+    top,
+    var(--last-box-light) 15%,
+    var(--last-box) 90%
+  );
+  /* Internet Explorer */
+  background: linear-gradient(90deg, var(--last-box-light) 15%, var(--last-box) 90%);
+  font-weight: bold;
+  padding: 2px 5px;
+  color: var(--black);
+}
+/* end Fifteen Game board */
+  
+  body {
+    background: var(--white);
+    color: #330000;
+    background: linear-gradient(180deg, #FFFFFF 0%, 
+              rgba(240, 245, 254, 0.751549) 23.23%, 
+              rgba(212, 226, 251, 0.27) 48.23%, 
+              rgba(166, 196, 247, 0.25) 63.85%, 
+              rgba(84, 142, 239, 0.48) 100%);
+    border-radius: 40px;
+    font-family: 'Roboto', sans-serif;
+  }
+  h1,h2,h3,h4,h5,h6{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    color:var(--grey)
+  }
+  .heading {
+    color: var(--white);
+    text-align: center;
+
+  }
+    
+
+  /* This is used inside the visible header of each page*/
+  #guide {
+    width: 730px;
+    font-size: 14px;
+    background: var(--background)000;
+    letter-spacing: 1px;
+    padding: 6px;
+    border: 1px var(--background) solid;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -khtml-border-radius: 10px;
+    border: 1px solid var(--shadow);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+  
+  #header {
+    color: var(--black);
+    text-align: center;
+    margin: 0;
+    padding-bottom: 20px;
+  }
+  
+  #wrapper {
+    /* background-color: #440300;*/ /*this color displays in the navigation bar*/
+    min-width: 700px;
+    text-align: center;
+    /*box-shadow: 5px 5px 5px #888;*/
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+  
+  #content {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: var(--background);
+
+  }
+  
+  #newGame, .btn-primary {
+    width: 200px;
+    color:var(--white);
+    border: none;
+    border-radius: 5px;
+    padding: 0.3rem 0;
+    background-color: var(--background);
+    background-image: var(--background);
+    background-image: -moz-linear-gradient(top, var(--gradient) 0%, var(--background) 100%); 
+    background-image: -webkit-linear-gradient(top, var(--gradient) 0%,var(--background) 100%); 
+    background-image: linear-gradient(to bottom, var(--gradient) 0%,var(--background) 100%); 
+    background-size: 300px;
+    background-repeat: no-repeat;
+    background-position: 0%;
+    -webkit-transition: background 300ms ease-in-out;
+    transition: background 300ms ease-in-out;
+  }
+  #newGame:hover, .btn-primary:hover {
+    background-position: -200%;
+    transition: background 300ms ease-in-out;
+    text-decoration: none;
+  }
+  #rows, #columns,#moves {
+    background-color: var(--background);
+    background-image: var(--background);
+    background-image: -moz-linear-gradient(top, var(--gradient) 0%, var(--background) 100%); 
+    background-image: -webkit-linear-gradient(top, var(--gradient) 0%,var(--background) 100%); 
+    background-image: linear-gradient(to bottom, var(--gradient) 0%,var(--background) 100%); 
+    border-radius: 5px;
+    border: none;
+    padding: 0.3rem;
+    color:var(--white);
+  }
+  .no_move{
+    color:var(--black);
+  }
+  /* Detail */
+  .bg-blue{
+    background-color: #2F80ED;
+  }
+  .profile_mobile,.profile_address{
+    color: var(--black);
+  }
+  .br-top{
+    border-radius: 10px 10px 0 0;
+    min-height: 15em;
+    max-height: 20em;
+  }
+  .br-bottom{
+    border-radius: 0 0 10px 10px ;
+    min-height: 15em;
+    max-height: 20em;
+  }
+  .profile_pic{
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    max-width: 50%;
+  }
+  .profile_name{
+    color:var(--white);
+    padding: 1rem 0 0 0;
+    font-weight: bold;
+  }
+  .profile_dob{
+    color:var(--white);
+  }
+  /* Detail End */
+
+/* Login */
+.divider:after,
+.divider:before {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eee;
+}
+.h-custom {
+  /* min-height: 100vh; */
+  height: calc(100% - 73px)
+}
+.hide{
+  display: none;
+  color:#f80000;
+}
+@media (max-width: 450px) {
+  .h-custom {
+    height: 100%;
+  }
+}
+.upload{
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important;
+}
+/* Login End */
